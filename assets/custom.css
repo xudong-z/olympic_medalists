@@ -1,0 +1,32 @@
+.loading_wrapper > div {
+    visibility: visible !important;
+}
+
+.dash-spinner {
+    /* background-image: url("http://i.stack.imgur.com/SBv4T.gif"); */
+    /* background-image: url("https://media.giphy.com/media/mmnZ2DmU8PRvubKrwQ/giphy.gif"); */
+    background-image: url("https://media.giphy.com/media/68QRW1GqBH5tFNGXPZ/giphy.gif");
+    background-size: contain;
+    /* background-size: 5cm 5cm; */
+    background-repeat: no-repeat;
+    background-position: 300 300;
+  }
+
+.dash-spreadsheet-menu {
+  margin: 20px 0 0 0;
+  justify-content: left;
+  }
+    
+.export {
+border-radius: 5px;
+border: 2px solid lightgrey;
+background-color:white;
+transition:.75s;
+float: left;
+}
+
+.export:hover {
+color:white;
+box-shadow: 0px 1px 3px lightgrey;
+background-color: lightgrey;
+}
