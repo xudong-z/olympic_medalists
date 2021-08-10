@@ -109,7 +109,7 @@ def get_default_fig(years):
             "xanchor": "right"
         },
         "transition": {"duration": 0.4*duration, "easing": "cubic-in-out"},
-        "pad": {"b": 20, "t": 20},"len": 0.9,"x": 0.1,"y": 0,"steps": [],
+        "pad": {"b": 5, "t": 20},"len": 0.9,"x": 0.1,"y": 0,"steps": [],
         }
 
     for yr in years:
@@ -127,7 +127,7 @@ def get_default_fig(years):
         yaxis=dict(range=[-10, 120], title="% Among All Medalists",fixedrange=True),
         legend=dict(orientation="h", yanchor="bottom", y=1, xanchor="left", x=0,  itemsizing='constant'),
         margin=dict(l=50, r=50, t=10, b=10),
-        height=500,
+        height=450,
         hovermode='closest',
         template= 'none',
         updatemenus=[

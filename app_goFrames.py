@@ -30,7 +30,7 @@ encoded_image = base64.b64encode(open(join(current_dir, 'modal.png'), 'rb').read
 slider_marks = {i:str(i) for i in range(age_min, age_max,5) }
 slider_marks[age_max] = str(age_max)+'+'
 app.layout = html.Div([
-    html.H2(id='title', children='Olympic Medalists Age Distribution By Sports (Summer)', style={"margin-bottom": 10, "text-align": 'middle'} ),
+    html.H2(id='title', children='Olympic Medalists Age Distribution By Sports (Summer)', style={"margin-bottom": 20,"margin-left": '20%', "text-align": 'middle'} ),
     html.Div([
         dbc.Modal(id="modal", is_open=True, children=[
                 dbc.ModalHeader("You are never too old for a breakthrough. Age is just a number.",
@@ -69,9 +69,11 @@ app.layout = html.Div([
             children=[ html.Div(id='main-text'), 
                         dcc.Graph(id='main-fig', )],
         ),
-    html.Div([html.A('More metadata can also be downloaded from '), 
-            html.A("Github", href='https://github.com/xudong-z/olympic_medalists', target="_blank")],
-            style={ "float": "right", 'margin-right':'2%'}),
+    html.Div([html.A('Download More Metadata from '), 
+            html.A("Github", href='https://github.com/xudong-z/olympic_medalists', target="_blank"),
+            html.A(' or Contact '), 
+            html.A("Me", href='xudong.zhg@gmail.com', target="_blank")],
+            style={ "float": "right", 'margin-right':'2%', 'margin-top':0, 'margin-bottom':0}),
     html.Div(dash_table.DataTable(id='main-table',
                         columns=[{"name": i, "id": i, "deletable": False, "selectable": False} for i in df_display.columns if i in col_to_show],
                         data=df_display.to_dict('records'),
@@ -194,4 +196,4 @@ def update_table(filter):
 
     return dff.to_dict('records')
 
-app.run_server(debug=True, use_reloader=True, port=8055)
+app.run_server(debug=False, use_reloader=True, port=8055)
